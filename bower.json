@@ -1,0 +1,20 @@
+{
+  "name": "bootstrap-only-css",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Alexander Anpleenko <vaeum@yahoo.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/vaeum/bootstrap-only-css",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6"
+  }
+}
