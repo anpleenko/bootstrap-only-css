@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-only-css",
-  "version": "0.0.4",
-  "description": "",
+  "version": "0.0.5",
+  "description": "Bootstrap 3 css without js and font files",
   "main": "dist/bootstrap.css",
   "scripts": {
     "prepublish": "gulp build"
