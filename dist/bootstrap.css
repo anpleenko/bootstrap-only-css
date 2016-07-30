@@ -228,7 +228,6 @@ a:focus, a:hover {
 
 a:focus, input[type=checkbox]:focus, input[type=file]:focus,
 input[type=radio]:focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
@@ -1559,7 +1558,6 @@ textarea.input-lg {
 
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus,
 .btn:active:focus, .btn:focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
