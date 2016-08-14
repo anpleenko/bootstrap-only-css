@@ -10,10 +10,17 @@ html {
     font-family: sans-serif;
         -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
     margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #333;
+    background-color: #fff;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
@@ -37,6 +44,8 @@ audio:not([controls]) {
 
 a {
     background-color: transparent;
+    color: #337ab7;
+    text-decoration: none;
 }
 
 a:active, a:hover {
@@ -86,6 +95,7 @@ sub {
 
 img {
     border: 0;
+    vertical-align: middle;
 }
 
 svg:not(:root) {
@@ -93,12 +103,16 @@ svg:not(:root) {
 }
 
 figure {
-    margin: 1em 40px;
+    margin: 0;
 }
 
 hr {
     box-sizing: content-box;
     height: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
 }
 
 pre {
@@ -136,10 +150,6 @@ button[disabled], html input[disabled] {
 button::-moz-focus-inner, input::-moz-focus-inner {
     border: 0;
     padding: 0;
-}
-
-input {
-    line-height: normal;
 }
 
 input[type=checkbox], input[type=radio] {
@@ -187,6 +197,77 @@ table {
 
 legend, td, th {
     padding: 0;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+a:focus, a:hover {
+    color: #23527c;
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-rounded {
+    border-radius: 6px;
+}
+
+.img-thumbnail {
+    padding: 4px;
+    line-height: 1.42857;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+}
+
+[role=button] {
+    cursor: pointer;
 }
 
 .container, .container-fluid {
@@ -448,6 +529,57 @@ legend, td, th {
 
 .col-xs-offset-12 {
     margin-left: 100%;
+}
+
+.clearfix:after, .clearfix:before {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.affix {
+    position: fixed;
 }
 
 @-ms-viewport {
