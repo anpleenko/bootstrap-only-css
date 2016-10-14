@@ -4,7 +4,7 @@
   "description": "Bootstrap 3 css without js and font files",
   "main": "dist/bootstrap.css",
   "scripts": {
-    "prepublish": "gulp build"
+    "prepublish": "rm -rf dist; gulp build"
   },
   "repository": {
     "type": "git",
@@ -17,20 +17,20 @@
   },
   "homepage": "https://github.com/vaeum/bootstrap-only-css#readme",
   "devDependencies": {
-    "autoprefixer": "^6.3.5",
-    "babel-core": "^6.7.6",
-    "babel-preset-es2015": "^6.6.0",
+    "autoprefixer": "^6.5.1",
+    "babel-core": "^6.17.0",
+    "babel-preset-es2015": "^6.16.0",
     "css-mqpacker": "^5.0.1",
     "gulp": "^3.9.0",
     "gulp-check": "^0.1.1",
     "gulp-csso": "^2.0.0",
-    "gulp-load-plugins": "^1.2.0",
+    "gulp-load-plugins": "^1.3.0",
     "gulp-notify": "^2.2.0",
-    "gulp-postcss": "^6.0.0",
+    "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.1",
-    "gulp-watch": "^4.3.5",
-    "perfectionist": "^2.1.3",
+    "gulp-watch": "^4.3.10",
+    "perfectionist": "^2.3.1",
     "run-sequence": "^1.1.5"
   }
 }
