@@ -2904,7 +2904,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 }
 
 .breadcrumb>li+li:before {
-    content: "/ ";
+    content: "/ ";
     padding: 0 5px;
     color: #ccc;
 }
