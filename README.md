@@ -4,6 +4,9 @@ Bootstrap 3 css without js and font files.
 
 [![NPM](https://nodei.co/npm-dl/bootstrap-only-css.png?months=1)](https://nodei.co/npm/bootstrap-only-css/)
 
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
+
 ### Install
 
 ```
@@ -30,3 +33,7 @@ cd bootstrap-only-css
 npm install
 gulp
 ```
+
+[downloads-image]: https://img.shields.io/npm/dm/bootstrap-only-css.svg
+[npm-url]: https://www.npmjs.com/package/bootstrap-only-css
+[npm-image]: https://img.shields.io/npm/v/bootstrap-only-css.svg
