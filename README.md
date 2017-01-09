@@ -10,7 +10,7 @@ Bootstrap 3 css without js and font files.
 ### Install
 
 ```
-npm install bootstrap-only-css -D
+npm install --save bootstrap-only-css
 ```
 
 Usage
