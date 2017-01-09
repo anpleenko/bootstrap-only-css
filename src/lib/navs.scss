@@ -9,15 +9,15 @@
 @import "bootstrap/mixins";
 
 // Reset and dependencies
-@import "bootstrap/normalize";
+// @import "bootstrap/normalize";
 // @import "bootstrap/print";
 // @import "bootstrap/glyphicons";
 
 // Core CSS
-@import "bootstrap/scaffolding";
+// @import "bootstrap/scaffolding";
 // @import "bootstrap/type";
 // @import "bootstrap/code";
-@import "bootstrap/grid";
+// @import "bootstrap/grid";
 // @import "bootstrap/tables";
 // @import "bootstrap/forms";
 // @import "bootstrap/buttons";
@@ -27,8 +27,8 @@
 // @import "bootstrap/dropdowns";
 // @import "bootstrap/button-groups";
 // @import "bootstrap/input-groups";
-// @import "bootstrap/navs";
-// @import "bootstrap/navbar";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
 // @import "bootstrap/breadcrumbs";
 // @import "bootstrap/pagination";
 // @import "bootstrap/pager";
@@ -52,5 +52,5 @@
 // @import "bootstrap/carousel";
 
 // Utility classes
-@import "bootstrap/utilities";
-@import "bootstrap/responsive-utilities";
+// @import "bootstrap/utilities";
+// @import "bootstrap/responsive-utilities";

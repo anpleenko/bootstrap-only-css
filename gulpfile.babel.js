@@ -9,30 +9,29 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const path = {
     src: {
-        scss: ['./bootstrap/**/*.scss']
+        scss: ['./src/dist/**/*.scss'],
+        lib: ['./src/lib/**/*.scss']
     },
     dest: {
-        scss: 'dist'
-    },
-    watch: {
-        scss: ['./bootstrap/**/*.scss']
+        scss: 'dist',
+        lib: 'lib'
     },
     PROCESSORS: [
         autoprefixer({ browsers: ['last 2 versions', '> 1%'] }),
         mqpacker
     ],
     sequence:{
-        build: ['scss']
-    }
+        build: ['dist', 'lib']
+    },
+    includePaths: ['./node_modules/bootstrap-sass/assets/stylesheets/']
 }
 
 let $ = gulpLoadPlugins({});
 
-gulp.task('scss', (() =>
+gulp.task('dist', (() =>
   gulp.src(path.src.scss)
-    .pipe($.sass({
-      includePaths: ['./node_modules/bootstrap-sass/assets/stylesheets/']
-    }).on('error', $.notify.onError()))
+    .pipe($.sass({includePaths: path.includePaths})
+      .on('error', $.notify.onError()))
 
     .pipe($.postcss(path.PROCESSORS))
     .pipe($.csso())
@@ -46,8 +45,26 @@ gulp.task('scss', (() =>
     .pipe(gulp.dest("./dist"))
 ))
 
+gulp.task('lib', (() =>
+  gulp.src(path.src.lib)
+    .pipe($.sass({includePaths: path.includePaths})
+      .on('error', $.notify.onError()))
+
+    .pipe($.postcss(path.PROCESSORS))
+    .pipe($.csso())
+    .pipe($.postcss([perfectionist({})]))
+    .pipe(gulp.dest(path.dest.lib))
+
+    .pipe($.csso())
+    .pipe($.rename({
+        suffix: ".min"
+    }))
+    .pipe(gulp.dest("./lib"))
+))
+
 gulp.task('build', () => {runSequence(path.sequence.build)})
 
 gulp.task('default', ['build'], () => {
-  $.watch(path.watch.scss, () => gulp.start('scss'));
+  $.watch(path.src.scss, () => gulp.start('dist'));
+  $.watch(path.src.lib, () => gulp.start('lib'));
 })
