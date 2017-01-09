@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-only-css",
-  "version": "0.0.11",
+  "version": "1.0.0",
   "description": "Bootstrap 3 css without js and font files",
   "main": "dist/bootstrap.css",
   "scripts": {

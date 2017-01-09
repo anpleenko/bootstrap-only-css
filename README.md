@@ -25,6 +25,13 @@ or
 import 'bootstrap-only-css/dist/bootstrap-only-grid.css';
 ```
 
+or
+
+```
+import 'bootstrap-only-css/lib/normalize.css';
+import 'bootstrap-only-css/lib/grid.css';
+```
+
 ### Develop
 
 ```
