@@ -1,12 +1,3 @@
-/**
- * Команды для запуска проекта
- * gulp - основная команда, при запуске скомпилируются стили и html
- *
- * Так же есть флаги
- * --bem запустит gulp с компиляцией по bem нотации
- * запуск gulp --bem
- */
-
 'use strict';
 
 import gulp            from 'gulp';
@@ -16,7 +7,7 @@ import mqpacker        from "css-mqpacker";
 import autoprefixer    from 'autoprefixer';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
-const env = {
+const path = {
     src: {
         scss: ['./bootstrap/**/*.scss']
     },
@@ -38,15 +29,15 @@ const env = {
 let $ = gulpLoadPlugins({});
 
 gulp.task('scss', (() =>
-  gulp.src(env.src.scss)
+  gulp.src(path.src.scss)
     .pipe($.sass({
-      includePaths: ['bower_components/bootstrap-sass/assets/stylesheets/']
+      includePaths: ['./node_modules/bootstrap-sass/assets/stylesheets/']
     }).on('error', $.notify.onError()))
 
-    .pipe($.postcss(env.PROCESSORS))
+    .pipe($.postcss(path.PROCESSORS))
     .pipe($.csso())
     .pipe($.postcss([perfectionist({})]))
-    .pipe(gulp.dest(env.dest.scss))
+    .pipe(gulp.dest(path.dest.scss))
 
     .pipe($.csso())
     .pipe($.rename({
@@ -55,8 +46,8 @@ gulp.task('scss', (() =>
     .pipe(gulp.dest("./dist"))
 ))
 
-gulp.task('build', () => {runSequence(env.sequence.build)})
+gulp.task('build', () => {runSequence(path.sequence.build)})
 
 gulp.task('default', ['build'], () => {
-  $.watch(env.watch.scss, () => gulp.start('scss'));
+  $.watch(path.watch.scss, () => gulp.start('scss'));
 })
