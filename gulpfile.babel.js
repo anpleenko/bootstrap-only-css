@@ -2,9 +2,6 @@
 
 import gulp            from 'gulp';
 import runSequence     from 'run-sequence';
-import perfectionist   from 'perfectionist';
-import mqpacker        from "css-mqpacker";
-import autoprefixer    from 'autoprefixer';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
 const path = {
@@ -17,8 +14,12 @@ const path = {
         lib: 'lib'
     },
     PROCESSORS: [
-        autoprefixer({ browsers: ['last 2 versions', '> 1%'] }),
-        mqpacker
+        require('autoprefixer')({ browsers: ['last 2 versions', '> 1%'] }),
+        require('css-mqpacker'),
+        require('postcss-discard-comments')({ removeAll: true })
+    ],
+    PROCESSORS_PERFECTIONIST: [
+        require('perfectionist'),
     ],
     sequence:{
         build: ['dist', 'lib']
@@ -35,7 +36,7 @@ gulp.task('dist', (() =>
 
     .pipe($.postcss(path.PROCESSORS))
     .pipe($.csso())
-    .pipe($.postcss([perfectionist({})]))
+    .pipe($.postcss(path.PROCESSORS_PERFECTIONIST))
     .pipe(gulp.dest(path.dest.scss))
 
     .pipe($.csso())
@@ -52,7 +53,7 @@ gulp.task('lib', (() =>
 
     .pipe($.postcss(path.PROCESSORS))
     .pipe($.csso())
-    .pipe($.postcss([perfectionist({})]))
+    .pipe($.postcss(path.PROCESSORS_PERFECTIONIST))
     .pipe(gulp.dest(path.dest.lib))
 
     .pipe($.csso())
